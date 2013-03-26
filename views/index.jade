@@ -1,5 +1,9 @@
-h1= title
-p Hello World
+extends layout
 
-form(action="...", method="post", enctype="multipart/form-data")
-  input(type="file", name="displayImage")
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(action=".", method="post", enctype="multipart/form-data")
+    input(type="file", name="displayImage")
+    input(type="submit", name="Send", value="Upload")
