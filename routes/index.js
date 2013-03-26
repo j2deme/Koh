@@ -1,17 +1,26 @@
-
+var fs = require('fs');
 /*
  * GET home page.
  */
-
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
 
+/*
+ * POST Image uploading
+ */
 exports.postImage = function(req, res){
   fs.readFile(req.files.displayImage.path, function (err, data) {
-    var newPath = __dirname + "/uploads/demo.png";
+    var filename = req.files.displayImage.name;
+    var newPath = "./uploads/" + filename;
     fs.writeFile(newPath, data, function (err) {
-      res.redirect("back");
+      res.send(req.files);
+      if(err) {
+        console.log(err);
+        res.redirect("back");
+      } else {
+        console.log("The file %s was saved!", filename);
+      }
     });
   });
 };
