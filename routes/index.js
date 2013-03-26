@@ -3,7 +3,7 @@ var fs = require('fs');
  * GET home page.
  */
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Koh' });
 };
 
 /*
@@ -14,7 +14,7 @@ exports.postImage = function(req, res){
     var filename = req.files.displayImage.name;
     var newPath = "./uploads/" + filename;
     fs.writeFile(newPath, data, function (err) {
-      res.send(req.files);
+      //res.send(req.files);
       if(err) {
         console.log(err);
         res.redirect("back");

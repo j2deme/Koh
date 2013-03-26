@@ -1,7 +1,15 @@
 doctype 5
-html
+html(lang="en")
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css')
+    link(rel='stylesheet', href='/stylesheets/todc-bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/select2.css')
+    //-    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type="text/javascript", src="/javascripts/html5shiv.js")
   body
     block content
+    script(type='text/javascript', src="/javascripts/jquery.js")
+    script(type='text/javascript', src="/javascripts/bootstrap.min.js")
+    script(type='text/javascript', src="/javascripts/select2.min.js")
