@@ -9,14 +9,13 @@ var program = require('commander');
 
 program
   .version('0.0.1')
-  .option('-f, --file','File to upload')
-  .option('-p, --peppers', 'Add peppers')
-  .option('-P, --pineapple', 'Add pineapple')
-  .option('-b, --bbq', 'Add bbq sauce')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+  .option('-f, --file <file>','Upload specified file')
+  .option('-F, --folder <folder>', 'Upload files from the specified folder')
+  .option('-h, --host <host>','Host where files will be uploaded')
   .parse(process.argv);
 
-console.log('Uploading file %s', program.file);
-if (true) {
-
+if(program.file){
+    console.log('Uploading file %s', program.file);
+} else {
+    program.help();
 }
