@@ -27,7 +27,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.post('/postImage', routes.postImage);
+app.post('/', routes.postImage);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port %d",app.get('port'));

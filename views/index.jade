@@ -4,11 +4,11 @@ block content
   div.row
     div.span6.offset3
       h1= title
-      form.form-horizontal(action="/postImage", method="post", enctype="multipart/form-data")
+      form.form-horizontal(action="/", method="post", enctype="multipart/form-data")
         fieldset
           legend Image Uploader
           div.control-group
-            label.control-label(for="displayImage") Imagen
+            label.control-label(for="displayImage") Image
             div.controls
               input(type="file", name="displayImage")
           div.form-actions
