@@ -9,17 +9,13 @@ def saveToFile(m , i , len):
 	filename = "matrix%dx%d.%d.txt" % (len, len, i)
 	f = open(filename, "w")
 	f.write(str(m));
+	f.write("\n")
 	f.close()
 	return
 
 size = int(sys.argv[1])
-
 numbers = size * size
-
 matrix = arange(numbers).reshape((size,size))
-
-#print 'Number of arguments:', len(sys.argv), 'arguments.'
-#print 'Argument List:', str(sys.argv)
 
 for i in xrange(0,size):
 	#print matrix
