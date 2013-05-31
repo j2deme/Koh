@@ -11,13 +11,12 @@ var path     = require('path');
 
 program
   .version('0.0.1')
-//  .option('-f, --file <file>','Watch specified file')
   .option('-F, --folder <folder>', 'Watch files from the specified folder')
   .option('-h, --host <host>','Host where files will be uploaded')
   .parse(process.argv);
 
 if(program.folder){
-    console.log('Watching file %s', program.folder);
+    console.log('Listening for changes on %s', program.folder);
     var watcher = chokidar.watch(program.folder, {ignored: /^\./, persistent: true});
     watcher
       .on('add', function(uri) {console.log('File %s has been added', uri);})
